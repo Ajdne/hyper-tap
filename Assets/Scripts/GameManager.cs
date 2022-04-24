@@ -7,7 +7,7 @@ public enum GameState { INTRO, MAIN_MENU, GAME }
 
 public delegate void OnStateChangeHandler();
 
-public class GameManager {
+public class GameManager : MonoBehaviour {
     protected GameManager() {}
     private static GameManager instance = null;
     public event OnStateChangeHandler OnStateChange;
@@ -17,13 +17,12 @@ public class GameManager {
     {
         get {
             if (GameManager.instance == null){
-                //DontDestroyOnLoad(GameManager.instance);      //PROBLEM SA OVIME
-                
+                //DoNotDestroyOnLoad(GameManager.instance);      //PROBLEM SA OVIME
+                //Debug.Log("Get!");
                 GameManager.instance = new GameManager();
             }
             return GameManager.instance;
         }
-
     }
 
     public void SetGameState(GameState state){
