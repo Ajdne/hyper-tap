@@ -4,20 +4,23 @@ using UnityEngine;
 
 public class RayCastTest : MonoBehaviour
 {   
-    public float rayDistance = 20f;
-    void FixedUpdate() {
-        if (Input.GetMouseButtonDown(0)) {      // OVO U NOVU SKRIPTU
+    Ray ray;
+    RaycastHit hit;
+    public GameObject bronzeCube;
 
-            Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-            RaycastHit hit;
+    //public float rayDistance = 20f;
+    void Update() {
+        ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 
-            if (Physics.Raycast (ray, out hit, rayDistance)) {
+        if (Physics.Raycast (ray, out hit)) {   // if the ray hits something, store data in hit variable
 
-                 //draw invisible ray cast/vector
-                 Debug.DrawLine (ray.origin, hit.point, Color.red);
-                 //log hit area to the console
-                 Debug.Log(hit.point);                                   
-             }    
+            if (hit.collider.tag == "Spawn Canvas") { // if it hits spawn canvas collider
+            
+                if (Input.GetMouseButtonDown(0)) {
+                    Instantiate(bronzeCube, hit.point + new Vector3(0, 0, -0.5f), Quaternion.identity);
+                    //Debug.Log (hit.point);
+                }
+            }
         }
     }
 }
