@@ -7,8 +7,6 @@ public class RayCastTest : MonoBehaviour
     Ray ray;
     RaycastHit hit;
     public GameObject bronzeCube;
-
-    [SerializeField]
     private TapsCounter tapsCounterScript;
     GameObject tapsCanvas;
 
@@ -26,6 +24,7 @@ public class RayCastTest : MonoBehaviour
                     Instantiate(bronzeCube, hit.point + new Vector3(0, 0, -0.5f), Quaternion.identity);
                     //Debug.Log (hit.point);
                     tapsCounterScript.AddTap();
+
                     Debug.Log(tapsCounterScript.taps);
                 }
             }
