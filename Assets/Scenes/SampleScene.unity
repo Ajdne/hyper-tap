@@ -151,8 +151,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 7.492984, z: 3.9501452}
-  m_Center: {x: 0, y: 3.246492, z: -0.11566496}
+  m_Size: {x: 3.542764, y: 7.492984, z: 3.9501452}
+  m_Center: {x: 1.271382, y: 3.246492, z: -0.11566496}
 --- !u!4 &28097113
 Transform:
   m_ObjectHideFlags: 0
@@ -196,8 +196,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 7.492984, z: 3.9501452}
-  m_Center: {x: 0, y: 3.246492, z: -0.11566496}
+  m_Size: {x: 3.7973897, y: 7.492984, z: 3.9501452}
+  m_Center: {x: -1.3986949, y: 3.246492, z: -0.11566496}
 --- !u!4 &446664263
 Transform:
   m_ObjectHideFlags: 0
@@ -1017,5 +1017,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e382c2f5a645e419538e8abf85d7db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bronzeCube: {fileID: 2361228428623471762, guid: c52b095adbee9cd4d9fb9269468ac372, type: 3}
-  tapsCounterScript: {fileID: 1652683130}
+  tapsCounterObj: {fileID: 1652683130}
+  cubeObj: {fileID: -2099130418294587642, guid: c52b095adbee9cd4d9fb9269468ac372, type: 3}

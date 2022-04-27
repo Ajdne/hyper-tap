@@ -6,12 +6,15 @@ public class RayCastTest : MonoBehaviour
 {   
     Ray ray;
     RaycastHit hit;
-    public GameObject bronzeCube;
-    public TapsCounter tapsCounterScript;
+    public TapsCounter tapsCounterObj;
+    public CubeScript cubeObj;
+    int bronzeCubesNumber = 0;
+
 
     void Start() {
-        
+        cubeObj.cubeNumber = 0; // reset cube number
     }
+
     void Update() {
         ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 
@@ -20,18 +23,27 @@ public class RayCastTest : MonoBehaviour
             if (hit.collider.tag == "Spawn Canvas") { // if it hits spawn canvas collider
 
                 if (Input.GetMouseButtonDown(0)) {
-                    Instantiate(bronzeCube, hit.point + new Vector3(0, 0, -0.5f), Quaternion.identity);
-                    //Debug.Log (hit.point);
-                    tapsCounterScript.AddTap();
 
-                    Debug.Log(tapsCounterScript.taps);
+                    cubeObj.cubeNumber += 1;
+                    Instantiate(cubeObj, hit.point + new Vector3(0, 0, -0.5f), Quaternion.identity);
+                    bronzeCubesNumber += 1;
+
+                    tapsCounterObj.AddTap();
+
+                    Debug.Log(cubeObj.cubeNumber);
                 }
             }
         }
+        GameObject[] bronzeCubes = GameObject.FindGameObjectsWithTag("Bronze Cube");
+
+        if (bronzeCubesNumber % 10 == 0 && bronzeCubesNumber != 0) {
+            Debug.Log("Destroy!");
+            
+            foreach (GameObject cube in bronzeCubes) {
+                Destroy(cube, 1.0f);
+            }
+            bronzeCubesNumber = 0;
+        }
     }
-    /*
-    public void AddTap() {
-        taps += 1;
-    }
-    */
+
 }

@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2361228428623471764}
   - component: {fileID: 2361228428623471765}
   - component: {fileID: 6439264627820699515}
+  - component: {fileID: 5762270300295722280}
+  - component: {fileID: -2099130418294587642}
   m_Layer: 0
   m_Name: Cube Bronze
   m_TagString: Bronze Cube
@@ -114,3 +116,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5762270300295722280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2361228428623471762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c238db1101693947976726f698daae3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-2099130418294587642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2361228428623471762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac009e23a9522f349b1ada58d3373dad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theCube: {fileID: 2361228428623471762}
+  cubeNumber: 0
