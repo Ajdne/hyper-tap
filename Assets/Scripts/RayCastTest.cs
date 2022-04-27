@@ -7,8 +7,7 @@ public class RayCastTest : MonoBehaviour
     Ray ray;
     RaycastHit hit;
     public GameObject bronzeCube;
-    private TapsCounter tapsCounterScript;
-    GameObject tapsCanvas;
+    public TapsCounter tapsCounterScript;
 
     void Start() {
         
