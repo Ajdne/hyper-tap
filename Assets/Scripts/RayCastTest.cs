@@ -8,8 +8,12 @@ public class RayCastTest : MonoBehaviour
     RaycastHit hit;
     public TapsCounter tapsCounterObj;
     public CubeScript cubeObj;
+    public GameObject silverCube;
     int bronzeCubesNumber = 0;
 
+    // Vector3 averageTransform;
+    float averageX;
+    float averageY;
 
     void Start() {
         cubeObj.cubeNumber = 0; // reset cube number
@@ -31,6 +35,7 @@ public class RayCastTest : MonoBehaviour
                     tapsCounterObj.AddTap();
 
                     Debug.Log(cubeObj.cubeNumber);
+                    Debug.Log(cubeObj.transform.position);
                 }
             }
         }
@@ -40,9 +45,18 @@ public class RayCastTest : MonoBehaviour
             Debug.Log("Destroy!");
             
             foreach (GameObject cube in bronzeCubes) {
+                
+                averageX += transform.position.x;
+                averageY += transform.position.y;
+
                 Destroy(cube, 1.0f);
             }
-            bronzeCubesNumber = 0;
+
+            
+            Instantiate(silverCube, new Vector3(averageX, averageY, -0.5f), Quaternion.identity);   // spawn a cube on an average position
+            Debug.Log(silverCube.transform.position);
+
+            bronzeCubesNumber = 0;  // reset the number of bronze cubes
         }
     }
 

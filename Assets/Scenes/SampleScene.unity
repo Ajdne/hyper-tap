@@ -1019,3 +1019,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tapsCounterObj: {fileID: 1652683130}
   cubeObj: {fileID: -2099130418294587642, guid: c52b095adbee9cd4d9fb9269468ac372, type: 3}
+  silverCube: {fileID: 8181434322316571271, guid: 9ad719ba783646c418ed65cb55ed8756, type: 3}
